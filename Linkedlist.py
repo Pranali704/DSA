@@ -17,10 +17,22 @@ class LinkedList:
                 temp=temp.next
             temp.next=new_node #appending new_node
     def print(self):
+        count=0
+        sum = 0
+
+
         temp=self.head
+
         while temp:
+            count=count+1 #similar to this do of sum
+            #sum of all positive nodes
+            if temp.data > 0:
+                sum = sum + temp.data
+
             print(temp.data)
-            temp=temp.next
+            temp = temp.next
+        print(sum)
+        print(count)
 
 list=LinkedList()
 n1=Node(10)
@@ -31,5 +43,7 @@ list.append(n2)
 list.append(n3)
 list.append(Node(40))
 list.print()
+
+
 
 
