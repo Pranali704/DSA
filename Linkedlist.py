@@ -16,6 +16,22 @@ class LinkedList:
             while(temp.next):
                 temp=temp.next
             temp.next=new_node #appending new_node
+
+
+#only one function to insert at betn,start,end
+    def insert(self, new_node,pos):
+        temp=self.head
+        if pos==1: #inserting at first position
+            new_node.next=self.head
+            self.head=new_node
+        else: #inserting node from second to last position
+            p=1
+            while(p!=pos-1 and temp.next!=None):
+                p=p+1
+            new_node.next=temp.next
+            temp.next=new_node
+            return
+
     def print(self):
         count=0
         sum = 0
@@ -42,6 +58,12 @@ list.append(n1)
 list.append(n2)
 list.append(n3)
 list.append(Node(40))
+list.print()
+list.append(Node(55))
+
+list.insert(Node(100),1)
+list.print()
+list.insert(Node(66),4)
 list.print()
 
 
