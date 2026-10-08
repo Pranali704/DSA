@@ -17,6 +17,23 @@ class LinkedList:
                 temp=temp.next
             temp.next=new_node #appending new_node
 
+    def del_node(self, value):
+        temp=self.head
+        #deleting first node
+        if temp.data == value:
+            self.head=self.head.next
+            return
+        while(temp):
+            if temp.data == value: #searching value
+                break
+            else:                  #traverse
+                prev=temp
+                temp=temp.next
+        if temp==None:
+            print("value not there in list")
+        prev.next=temp.next
+        temp=None
+
 
 #only one function to insert at betn,start,end
     def insert(self, new_node,pos):
