@@ -60,6 +60,15 @@ class LinkedList:
             curr=nextnode
         self.head=prev
 
+
+    def sum_consecutive(self):
+        temp = self.head
+
+        while temp and temp.next:
+            s = temp.data + temp.next.data
+            print(temp.data, "+", temp.next.data, "=", s)
+            temp = temp.next
+    
     
     def print(self):
         temp=self.head
@@ -84,5 +93,11 @@ list.del_node(100)
 list.print()
 list.reverse()
 list.print()
+list.sum_consecutive()
+
+
+#hw a print function for sum of 2 consecutive nodes in sll
+
+
 
 
