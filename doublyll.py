@@ -35,7 +35,17 @@ class LinkedList:
                 temp.next.prev = new_node
             temp.next = new_node
             new_node.prev = temp
-
+    def reverse(self):
+        temp = self.head
+        if temp == None:
+            print("List is empty")
+            return 
+        while temp.next:
+            temp = temp.next 
+        print("\nList elements in reverse order: ")
+        while temp:
+            print(temp.data, end = " ")
+            temp = temp.prev
     def print(self):
         temp = self.head
         print("List elements: ")
@@ -51,12 +61,12 @@ list = LinkedList()
 list.append(Node(12))
 list.append(Node(52))
 list.append(Node(22))
-list.print()
+#list.print()
 
 list.insert(Node(5),1)
 list.insert(Node(512),2)
-list.print()
-
+#list.print()
+list.reverse()
 
 
     
