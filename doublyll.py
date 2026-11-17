@@ -55,6 +55,7 @@ class LinkedList:
         while(temp):
             print(temp.data , end =" ")
             temp = temp.prev
+            
     #def print(self):
      #   temp = self.head
 list = LinkedList()
