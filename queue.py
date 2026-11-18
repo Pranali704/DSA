@@ -74,6 +74,13 @@ class LQueue:
         while not st.isempty():
             temp.data = st.pop().data
             temp = temp.next
+    def rev_stack(s1):
+        q1=LQueue()
+        while not s1.isempty():
+            q1.enqueue(Node(s1.pop()))
+        q1.print()
+
+    
 
     # Merge two queues
     def merge(self, que2):
