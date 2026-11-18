@@ -24,6 +24,7 @@ class Stack:
             self.top = self.top.next
             temp.next = None
             return temp
+        #return popped return to reverse 
 
 
 class LQueue:
@@ -107,6 +108,7 @@ class LQueue:
             print("Queues are identical")
         else:
             print("Queues are not identical")
+    
 
 
 # Main program
@@ -156,3 +158,4 @@ que.display()
 
 # Check identical queues
 que.identical(que2)
+#reverse_stack(st)
