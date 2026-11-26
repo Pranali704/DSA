@@ -15,7 +15,7 @@
 
 class Node:
     def __init__(self, value):
-        self.pid = value
+        self.pid = value  #self.data = value
         self.left = None
         self.right = None
 
@@ -59,6 +59,29 @@ class BST:
             self.postorder(rt.left)
             self.postorder(rt.right)
             print(rt.pid, end=" ")
+
+    def level_order(self,rt):
+        if rt is None:
+            print("BST is empty")
+            return 
+        arr=[]
+        cnt=0 #for counting visited nodes
+        level=0
+        arr.append(rt)
+        while cnt<len(arr):
+            node_count=len(arr)-cnt  #no of nodes to be visited at current level
+            print("\nLevel",level,"nodes:",end=" ")
+            for i in range(node_count):
+              temp=arr[cnt]
+              cnt = cnt+1
+              print(temp.pid,end=" ")
+              if temp.left:
+                arr.append(temp.left)
+              if temp.right:
+               arr.append(temp.right)
+            level=level+1
+        print("\nHeight of the BST:", level-1)
+
 
     def search(self, key):
         temp = self.root
@@ -148,6 +171,8 @@ b1.postorder(b1.root)
 
 print("\nInorder:")
 b1.inorder(b1.root)
+print("\nLevel order:")
+b1.level_order(b1.root)
 
 # Find minimum and maximum
 b1.min_max(b1.root)
@@ -163,6 +188,3 @@ if b1.search(175):
     print("\nFound the node with value 175")
 else:
     print("\nNot found")
-
-
-
